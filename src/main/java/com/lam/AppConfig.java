@@ -1,6 +1,6 @@
-package com.spring;
+package com.lam;
 
-import com.lam.ComponentScan;
+import com.spring.ComponentScan;
 
 @ComponentScan("com.lam.service")
 public class AppConfig {

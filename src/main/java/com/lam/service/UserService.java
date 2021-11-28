@@ -1,7 +1,26 @@
 package com.lam.service;
 
-import com.lam.Component;
+import com.spring.Autowired;
+import com.spring.BeanNameAware;
+import com.spring.Component;
+import com.spring.Scope;
 
-@Component
-public class UserService {
+@Component("userService")
+
+public class UserService implements BeanNameAware {
+
+    @Autowired
+    private OrderService orderService;
+
+    private String beanName;
+
+    public void test(){
+        System.out.println(orderService);
+        System.out.println(beanName);
+    }
+
+    @Override
+    public void setBeanName(String beanName) {
+        this.beanName = beanName;
+    }
 }
